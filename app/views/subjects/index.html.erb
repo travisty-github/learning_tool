@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Subjects</h1>
+  <% @subjects.each do |s| %>
+    <div class="well">
+      <h3><%= link_to s.title, subject_chunks_path(s) %> </h3>
+    </div>
+  <% end %>
+</div>
