@@ -4,7 +4,6 @@ class CreateChunks < ActiveRecord::Migration
       t.belongs_to :subject, index: true
       t.text :question
       t.text :answer
-
       t.timestamps
     end
   end
