@@ -1,0 +1,2 @@
+class ChunksController < ApplicationController
+end
