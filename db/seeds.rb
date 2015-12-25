@@ -1,7 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# Subjects
+Subject.create(title: "Widget Operations")
+Subject.create(title: "Poodle Grooming")
+Subject.create(title: "Lawnmower Racing")
+
+# Generate 10 chunks for each subject
+chunk_numbers = [*1..10]
+Subject.all do |s|
+  chunk_numbers.each do |cn|
+    Chunk.create(question: "Question #{cn}", answer: "Answer #{cn}",
+                 subject_id: s.id)
+     end
+end
