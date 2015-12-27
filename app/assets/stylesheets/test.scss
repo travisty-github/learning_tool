@@ -1,0 +1,6 @@
+@import "bootstrap";
+
+.correct-answer-well {
+  @extend .well;
+  background-color: #5cb85c;
+}
