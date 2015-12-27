@@ -32,6 +32,9 @@ gem 'bootstrap-sass', '~> 3.3.6'
 # Autoprefix CSS
 gem 'autoprefixer-rails'
 
+# Paloma for per-page JavaScript
+gem 'paloma', '~> 4.2.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
