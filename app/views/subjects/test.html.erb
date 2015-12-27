@@ -1,6 +1,6 @@
-<div class="container">
+<div id="<%= @subject_id %>" class="container subject">
   <% @chunks.each do |c| %>
-  <div class="well text-center">
+  <div id="<%= c.id %>" class="well text-center">
     <h3><%= c.question %></h3>
     <p class="test-answer hidden"><%= c.answer %></p>
     <button class="test-btn-answer btn btn-primary btn-lg">Show Answer</button>

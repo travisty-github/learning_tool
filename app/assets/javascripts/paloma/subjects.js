@@ -18,7 +18,11 @@ SubjectsController.prototype.test = function(){
       // Hide all buttons
       $(this).addClass('hidden');
       $(this).next().addClass('hidden');
-      // TODO AJAX response
+      // AJAX response
+      var subject_id = $(this).parents('.subject').attr('id');
+      var chunk_id = $(this).parent().attr('id');
+      var response = {correct: true};
+      $.post("/subjects/" + subject_id + "/test/" + chunk_id, response);
     });
 
     // Incorrect answer
@@ -26,7 +30,11 @@ SubjectsController.prototype.test = function(){
       // Hide all buttons
       $(this).addClass('hidden');
       $(this).prev().addClass('hidden');
-      // TODO AJAX response
+      // AJAX response
+      var subject_id = $(this).parents('.subject').attr('id');
+      var chunk_id = $(this).parent().attr('id');
+      var response = {correct: false};
+      $.post("/subjects/" + subject_id + "/test/" + chunk_id, response);
     });
   });
 };

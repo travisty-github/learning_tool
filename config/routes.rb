@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :chunks
   end
   get 'subjects/:subject_id/test' => 'subjects#test', as: :test
+  post 'subjects/:subject_id/test/:chunk_id' => 'subjects#answer', as: :answer
   root 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
