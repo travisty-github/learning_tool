@@ -33,7 +33,7 @@ SubjectsController.prototype.test = function(){
       // AJAX response
       var subject_id = $(this).parents('.subject').attr('id');
       var chunk_id = $(this).parent().attr('id');
-      var response = {correct: false};
+      var response = {answer_correct: false};
       $.post("/subjects/" + subject_id + "/test/" + chunk_id, response);
     });
   });

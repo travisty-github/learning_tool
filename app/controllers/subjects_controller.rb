@@ -13,7 +13,8 @@ class SubjectsController < ApplicationController
 
   # Save answer to a chunk
   def answer
-    logger.debug "Test"
+    RecallTest.create(recalled_correctly: params[:answer_correct],
+                      chunk_id: params[:chunk_id],  recall_date: Time.now)
     render nothing: true
   end
 
