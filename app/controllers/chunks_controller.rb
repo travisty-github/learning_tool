@@ -33,6 +33,22 @@ class ChunksController < ApplicationController
     redirect_to subject_chunks_path(params[:subject_id])
   end
 
+  # Edit form for a chunk
+  def edit
+    @chunk = Chunk.find(params[:id])
+  end
+
+  # Update a chunk
+  def update
+    chunk = Chunk.find(params[:id])
+    if chunk.update(chunk_params)
+      flash[:success] = "Chunk updated."
+    else
+      flash[:danger] = "Failed to update chunk."
+    end
+    redirect_to subject_chunks_path(params[:subject_id])
+  end
+
   private
     # Allow specified form parameters to be saved
     def chunk_params
