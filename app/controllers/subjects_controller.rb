@@ -27,9 +27,9 @@ class SubjectsController < ApplicationController
   def create
     s = Subject.new(subject_params)
     if s.save
-      flash.notice = "Subject created."
+      flash[:success] = "Subject created."
     else
-      flash.alert = "Failed to create subject."
+      flash[:danger] = "Failed to create subject."
     end
     redirect_to subjects_path
   end

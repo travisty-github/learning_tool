@@ -4,8 +4,8 @@
 <head>
   <title>LearningTool</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-      <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
 </head>
 
 <body>
@@ -43,9 +43,17 @@
     <!-- /.container-fluid -->
   </nav>
 
-  <%= yield %>
-  <%= insert_paloma_hook %>
+  <div class="container">
 
+    <% flash.each do |key, value| %>
+    <%= content_tag :div, value, class: "alert alert-#{key}" %>
+    <% end %>
+
+    <%= yield %>
+    <%= insert_paloma_hook %>
+
+  </div>
+  
 </body>
 
 </html>
