@@ -18,4 +18,25 @@ class SubjectsController < ApplicationController
     render nothing: true
   end
 
+  # Form for a new subject
+  def new
+    @subject = Subject.new
+  end
+
+  # Save new subject
+  def create
+    s = Subject.new(subject_params)
+    if s.save
+      flash.notice = "Subject created."
+    else
+      flash.alert = "Failed to create subject."
+    end
+    redirect_to subjects_path
+  end
+
+  private
+    def subject_params
+      params.require(:subject).permit(:title)
+    end
+
 end
