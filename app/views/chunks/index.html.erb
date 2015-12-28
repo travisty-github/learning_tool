@@ -1,8 +1,16 @@
-<div class="container">
-  <% @chunks.each do |c| %>
-  <div class="well">
-    <h3><%= c.question %></h3>
-    <p><%= c.answer %></p>
+<% @chunks.each do |c| %>
+<div class="well">
+  <h3><%= c.question %></h3>
+  <p><%= c.answer %></p>
+  <div class="row">
+    <div class="col-md-2">
+      <%= link_to "Edit Chunk", edit_subject_chunk_path(c.subject_id, c.id),
+      class: 'btn btn-default btn-block', method: :delete %>
+    </div>
+    <div class="col-md-2">
+      <%= link_to "Delete Chunk", subject_chunk_path(c.subject_id, c.id),
+      class: 'btn btn-danger btn-block', method: :delete %>
+    </div>
   </div>
-  <% end %>
 </div>
+<% end %>
