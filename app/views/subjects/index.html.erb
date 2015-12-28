@@ -1,14 +1,27 @@
-  <h1>Subjects</h1>
-  <h3>
-    <%= link_to "Add Subject", new_subject_path, class: 'btn btn-primary btn-block' %>
-  </h3>
-  <% @subjects.each do |s| %>
-  <div class="well">
-    <h3><%= link_to s.title, subject_chunks_path(s) %> </h3>
-    <%= link_to "View Chunks", subject_chunks_path(s), class: 'btn btn-default' %>
-    <%= link_to "Add Chunks", new_subject_chunk_path(s), class: 'btn btn-primary' %>
-    <%= link_to "Take Test", test_path(s), class: 'btn btn-success' %>
-    <%= link_to "Delete Subject", test_path(s), class: 'btn btn-danger',
-    method: :delete %>
+<h1>Subjects</h1>
+<h3>
+  <%= link_to "Add Subject", new_subject_path, class: 'btn btn-primary btn-block' %>
+</h3>
+<% @subjects.each do |s| %>
+<div class="well">
+  <h3><%= link_to s.title, subject_chunks_path(s) %> </h3>
+  <div class="row">
+    <div class="col-md-2 col-md-offset-1">
+      <%= link_to "View Chunks", subject_chunks_path(s), class: 'btn btn-default btn-block' %>
+    </div>
+    <div class="col-md-2">
+      <%= link_to "Add Chunks", new_subject_chunk_path(s), class: 'btn btn-default btn-block' %>
+    </div>
+    <div class="col-md-2">
+      <%= link_to "Scheduled Tests", test_path(s), class: 'btn btn-default btn-block' %>
+    </div>
+    <div class="col-md-2">
+      <%= link_to "Test All", test_path(s), class: 'btn btn-default btn-block' %>
+    </div>
+    <div class="col-md-2">
+      <%= link_to "Delete Subject", test_path(s), class: 'btn btn-danger btn-block',
+      method: :delete %>
+    </div>
   </div>
-  <% end %>
+</div>
+<% end %>
