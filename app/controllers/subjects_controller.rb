@@ -35,7 +35,20 @@ class SubjectsController < ApplicationController
     redirect_to subjects_path
   end
 
+  # Delete subject and all associatd chunks
+  def destroy
+    if Subject.destroy_all(id: params[:id])
+      flash[:success] = "Subject deleted."
+    else
+      flash[:danger] = "Failed to delete subject."
+    end
+
+    # Return to index
+    redirect_to subjects_path
+  end
+
   private
+    # Whitelist parameters
     def subject_params
       params.require(:subject).permit(:title)
     end
