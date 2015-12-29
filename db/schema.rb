@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20151225080451) do
     t.datetime "updated_at"
   end
 
+  add_index "chunks", ["subject_id"], name: "index_chunks_on_subject_id"
+
   create_table "recall_tests", force: true do |t|
     t.integer  "chunk_id"
     t.boolean  "recalled_correctly"

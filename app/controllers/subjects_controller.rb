@@ -9,6 +9,7 @@ class SubjectsController < ApplicationController
   def test
     @chunks = Chunk.where(subject_id: params[:subject_id])
     @subject_id = params[:subject_id]
+    js 'Subjects'
   end
 
   # Save answer to a chunk

@@ -16,3 +16,9 @@
 //= require paloma
 //= require_tree .
 //= require bootstrap-sprockets
+
+// Paloma does not seem to work without this. It seems to need to call
+// Paloma.engine.start() each time the page is changed by Turbolinks to execute.
+$(window).bind('page:load', function(){
+  Paloma.engine.start();
+});
