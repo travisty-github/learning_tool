@@ -2,6 +2,7 @@ var SubjectsController = Paloma.controller('Subjects');
 
 // Executes when Rails SubjectsController#test is executed.
 SubjectsController.prototype.test = function(){
+alert('Paloma2');
   $('document').ready(function() {
 
     // Show answer, hide answer button and show correct/incorrect buttons
@@ -38,3 +39,8 @@ SubjectsController.prototype.test = function(){
     });
   });
 };
+
+SubjectsController.prototype.index = function(){};
+SubjectsController.prototype.answer = function(){};
+SubjectsController.prototype.new = function(){};
+SubjectsController.prototype.create = function(){};
