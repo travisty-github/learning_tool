@@ -1,7 +1,7 @@
 <% @chunks.each do |c| %>
 <div class="well">
-  <h3><%= c.question %></h3>
-  <p><%= c.answer %></p>
+  <h3><%= simple_format c.question %></h3>
+  <p><%= simple_format c.answer %></p>
   <div class="row">
     <div class="col-md-2">
       <%= link_to "Edit Chunk", edit_subject_chunk_path(c.subject_id, c.id),
