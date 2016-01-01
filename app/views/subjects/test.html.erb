@@ -1,7 +1,9 @@
 <div id="<%= @subject_id %>" class="subject">
   <% @chunks.each do |c| %>
   <div id="<%= c.id %>" class="well">
-    <h3><%= simple_format c.question %></h3>
+    <div class="h3">
+      <%= simple_format c.question %>
+    </div>
     <div class="test-answer hidden">
       <%= simple_format c.answer %>
     </div>
