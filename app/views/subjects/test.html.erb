@@ -2,7 +2,9 @@
   <% @chunks.each do |c| %>
   <div id="<%= c.id %>" class="well">
     <h3><%= simple_format c.question %></h3>
-    <p class="test-answer hidden"><%= simple_format c.answer %></p>
+    <div class="test-answer hidden">
+      <%= simple_format c.answer %>
+    </div>
     <button class="test-btn-answer btn btn-primary btn-lg">Show Answer</button>
     <button class="test-btn-correct btn btn-success btn-lg hidden">Correct</button>
     <button class="test-btn-incorrect btn btn-default btn-lg hidden">Not Correct</button>
