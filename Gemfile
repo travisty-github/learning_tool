@@ -35,6 +35,9 @@ gem 'autoprefixer-rails'
 # Paloma for page specific javascript
 gem 'paloma', '~> 4.2.1'
 
+# Use PostgreSQL
+gem 'pg', '~> 0.18.4'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
