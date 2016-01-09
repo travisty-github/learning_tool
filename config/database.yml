@@ -3,7 +3,7 @@
 production:
   adapter: postgresql
   encoding: unicode
-  database: learning_tool_development
+  database: learning_tool
   pool: 5
   username: rails_learning_tool
   password: Figaro.env.postgresql_password
