@@ -36,6 +36,9 @@ gem 'paloma', '~> 4.2.1'
 # Use PostgreSQL
 gem 'pg', '~> 0.18.4'
 
+# Use Figaro to hide PostgreSQL login for production
+gem 'figaro', '~> 1.1.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,10 +1,20 @@
+#PostgreSQL configuration
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: learning_tool_development
+  pool: 5
+  username: rails_learning_tool
+  password: Figaro.env.postgresql_password
+
 development:
   adapter: postgresql
   encoding: unicode
   database: learning_tool_development
   pool: 5
   username: rails
-  password:
+  password: Figaro.env.postgresql_password
 
 test:
   adapter: postgresql
@@ -12,4 +22,4 @@ test:
   database: learning_tool_development
   pool: 5
   username: rails
-  password:
+  password: Figaro.env.postgresql_password
