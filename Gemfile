@@ -39,6 +39,9 @@ gem 'pg', '~> 0.18.4'
 # Use Figaro to hide PostgreSQL login for production
 gem 'figaro', '~> 1.1.1'
 
+# Use Phusion Passenger for deployment
+gem 'passenger', '5.0.23'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
