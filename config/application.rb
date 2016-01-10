@@ -21,3 +21,7 @@ module LearningTool
     # config.i18n.default_locale = :de
   end
 end
+
+# Load the production secret key from the Figaro environment variable (defined
+# on server only).
+config.secret_key_base = Figaro.env.secret_key_base
