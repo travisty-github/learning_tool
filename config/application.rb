@@ -19,9 +19,9 @@ module LearningTool
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+  # Load the production secret key from the Figaro environment variable (defined
+  # on server only).
+  config.secret_key_base = Figaro.env.secret_key_base
   end
 end
-
-# Load the production secret key from the Figaro environment variable (defined
-# on server only).
-config.secret_key_base = Figaro.env.secret_key_base
