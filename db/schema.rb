@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151225080451) do
+ActiveRecord::Schema.define(version: 20160215003858) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "chunks", force: true do |t|
     t.integer  "subject_id"
@@ -19,9 +22,11 @@ ActiveRecord::Schema.define(version: 20151225080451) do
     t.text     "answer"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "test_sequence_number", default: 0
+    t.date     "next_test_date"
   end
 
-  add_index "chunks", ["subject_id"], name: "index_chunks_on_subject_id"
+  add_index "chunks", ["subject_id"], name: "index_chunks_on_subject_id", using: :btree
 
   create_table "recall_tests", force: true do |t|
     t.integer  "chunk_id"
@@ -29,7 +34,7 @@ ActiveRecord::Schema.define(version: 20151225080451) do
     t.datetime "recall_date"
   end
 
-  add_index "recall_tests", ["chunk_id"], name: "index_recall_tests_on_chunk_id"
+  add_index "recall_tests", ["chunk_id"], name: "index_recall_tests_on_chunk_id", using: :btree
 
   create_table "subjects", force: true do |t|
     t.string   "title"
