@@ -14,7 +14,7 @@ class ChunksController < ApplicationController
   def create
     chunk = Chunk.new(chunk_params)
     chunk[:subject_id] = params[:subject_id]
-    chunk[:next_test_date] = chunk.get_next_test_date
+    chunk.set_next_test_date
     if chunk.save
       flash[:success] = "Created chunk."
     else
