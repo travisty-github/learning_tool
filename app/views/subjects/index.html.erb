@@ -13,10 +13,10 @@
       <%= link_to "Create Chunk", new_subject_chunk_path(s), class: 'btn btn-default btn-block' %>
     </div>
     <div class="col-md-2">
-      <%= link_to "Scheduled Tests", test_scheduled_path(s), class: 'btn btn-default btn-block' %>
+      <%= link_to "Scheduled Tests", test_path(s), class: 'btn btn-default btn-block' %>
     </div>
     <div class="col-md-2">
-      <%= link_to "Test All", test_all_path(s), class: 'btn btn-default btn-block' %>
+      <%= link_to "Test All", test_path(s), class: 'btn btn-default btn-block' %>
     </div>
     <div class="col-md-2">
       <%= link_to "Delete Subject", subject_path(s), class: 'btn btn-danger btn-block',
